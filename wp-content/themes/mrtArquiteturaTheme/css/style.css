@@ -1,12 +1,13 @@
-@font-face
-{
-	font-family:"helveticaNeue LT 45 Light", sans-serif;
-	src: url('fontes/Helvetica_LT_45_Light.ttf'),
-     	url('fontes/Helvetica_LT_45_Light.eot'); /* IE9 */
+@font-face {
+	font-family: 'HelveticaNeueLT-Light';
+	src: url('fontes/Helvetica_LT_45_Light.eot?') format('eot'), 
+	     url('fontes//Helvetica_LT_45_Light.woff') format('woff'), 
+	     url('fontes//Helvetica_LT_45_Light.ttf')  format('truetype');
+		 /*url('http://fonts.snapshotmedia.co.uk/uploads/HelveticaNeueLT-Light/Helvetica_LT_45_Light.svg#http://fonts.snapshotmedia.co.uk/uploads/HelveticaNeueLT-Light/Helvetica_LT_45_Light') format('svg')*/
 }
 
 *{
-	font-family:"helveticaNeue LT 45 Light", sans-serif;
+	font-family:"HelveticaNeueLT-Light";
 	border:0px;
 	outline:none;
 
@@ -61,8 +62,12 @@ body {
 #contentHeader div{
 	display:table;
 	float:left;
-	width:325px;
+	width:330px;
 	height:inherit;
+	
+	width: 330px\9; /* IE 8 and below */
+	*width: 330px; /* IE 7 and below */
+	_width: 330px; /* IE 6 */
 }
 
 .logoMenu{
@@ -152,6 +157,10 @@ body {
 #menuSubMenu ul li{
 	font-size:12pt;
 	padding: 15px;
+	
+	padding: 16px 15px 16px 15px\9; /* IE 8 and below */
+	*padding: 16px 15px 16px 15px; /* IE 7 and below */
+	_padding: 16px 15px 16px 15px; /* IE 6 */
 }
 
 #menuSubMenu ul li:hover{
@@ -162,16 +171,27 @@ body {
 	font-size:12pt;
 }
 
-#searchSubMenu input{
-	background: #fff url('../images/iconSearch.png') no-repeat 312px 5px;
+#searchSubMenu input[type=text]{
 	color:#5a5a5a;
 	font-size:11pt;
-	width: 300px !important;
+	width: 302px !important;
 	height: 15px;
 	display: table;
-	padding: 10px 35px 10px 10px;
+	padding: 10px 0px 10px 10px;
+	margin-left: 8px;
 	font-style:italic;
 }
+
+#searchSubMenu input[type=submit]{
+	cursor:pointer;
+	background: #fff url('../images/iconSearch.png') no-repeat 5px 5px;
+	width: 35px !important;
+	height: 35px;
+	display: table;
+	margin: 0px;
+	padding: 0px;
+}
+
 /* @End Style Css SubMenu */
 
 /* Style Css Container*/
@@ -192,7 +212,8 @@ body {
 #content{
 	background:#fff;
 	width:705px;
-	min-height:750px;
+	height:auto;
+	/*min-height:750px;*/
 	padding:15px 13px 15px 13px;
 }
 
@@ -210,6 +231,7 @@ margin: 15px !important;
 	display:list-item !important;
 	list-style-image:url('../images/list-item-sidebar.png') !important;
 	margin-left: 15px !important;
+	height: 20px;
 }
 
 /* @End Style Css Container*/
@@ -262,9 +284,9 @@ h6{
 
 .imgPost{
 	border:1px solid #e7eef0;
-	display:table;
-	width: 215px;
-	height: 163px;
+	display: table;
+	width: 213px;
+	height: 161px;
 	padding: 5px;
 }
 
@@ -320,6 +342,24 @@ h6{
 	width: 13px;
 	height: 8px;
 }
+
+#pagPost{
+	display:table;
+	width:100%;
+	height:30px;
+}
+
+#pagPost #postAntigos, #pagPost #postNovos{
+	display:table;
+	height:30px;
+}
+
+#pagPost #postAntigos{
+	float:left;	
+}
+#pagPost #postNovos{
+	float:right;	
+}
 /* @End Style Css Box Post */
 
 /* Style Css Links*/
@@ -327,6 +367,12 @@ a, a:hover, a:active, a:visited{
 	text-decoration:none;	
 }
 
+.linkBtnPost{
+	color:#fff;
+	background:#000;
+	height:inherit;
+	padding:0px 5px 0px 5px;
+}
 
 .linkBoxPost{
 	color:#5a5a5a;
