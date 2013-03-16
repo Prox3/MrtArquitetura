@@ -1,0 +1,416 @@
+@font-face
+{
+	font-family:"helveticaNeue LT 45 Light", sans-serif;
+	src: url('fontes/Helvetica_LT_45_Light.ttf'),
+     	url('fontes/Helvetica_LT_45_Light.eot'); /* IE9 */
+}
+
+*{
+	font-family:"helveticaNeue LT 45 Light", sans-serif;
+	border:0px;
+	outline:none;
+
+}
+
+body {
+	margin:0;
+	padding:0;
+	text-align:center; /* hack para o IE */	
+	background:url('../images/background.png') repeat;
+	overflow-x: hidden;
+	}
+#tudo {
+	width: 1000px;
+	margin:0 auto;			
+	text-align:left; /* "remédio" para o hack do IE */	
+	}
+#conteudo {
+	}
+	
+/* Style Css Header */
+#backgroundHeader{
+	background:#585757;
+	width:100%;
+	height:65px;
+	position:absolute;
+	left:0px;
+	z-index:-10 !important;
+}
+
+#header{
+}
+
+#contentHeader{
+	color:#fff;
+	display:table;
+	margin:0 auto;
+	width:1000px;
+	height:65px;
+		/* IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	/* IE 5-7 */
+	filter: alpha(opacity=100);
+	/* Netscape */
+	-moz-opacity: 1;
+	/* Safari 1.x */
+	-khtml-opacity: 1;
+	/* Good browsers */
+	opacity: 1;	
+}
+
+#contentHeader div{
+	display:table;
+	float:left;
+	width:325px;
+	height:inherit;
+}
+
+.logoMenu{
+	width:308px !important;
+	height:100px !important;;
+	display:table;
+	background:#000;	
+	position: absolute;
+	margin-left: 326px;
+	padding:0px 20px 0px 20px;
+	text-align: center;
+	z-index:2 !important;
+}
+
+.linkMenuHeader{
+	color:#fff;
+	font-size:10pt;
+}
+
+.menuRigth{
+	float:right !important;
+}
+
+#contentHeader div ul{
+	display: table-cell;
+	vertical-align: middle;	
+}
+
+#contentHeader div ul li{
+	padding: 0px 13px 0px 13px;
+}
+/* @End Style Css Header */
+
+/* Style Css Banner Rotativo*/
+.clearDivBanner{
+	display: table;
+	height: 430px;
+	width: 100%;	
+}
+
+#banner{
+	border-bottom:3px solid #fff;
+	-moz-box-shadow: 0px 0px 20px 3px #494849;
+	-webkit-box-shadow: 0px 0px 20px 3px #494849;
+	box-shadow: 0px 0px 20px 3px #494849;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -11;	
+}
+/* @End Style Css Banner Rotativo*/
+
+/* Style Css SubMenu */
+#subMenu{
+	display:table;
+	height:50px;
+	width:100%;
+}
+
+#subMenu #backgroundSubMenu{
+	background:#000;
+	width:1000px;
+	height:50px;
+	position:absolute;
+	z-index: -10;
+}
+
+#menuSubMenu, #searchSubMenu{
+	height:50px;
+	display:table;
+	float:left;
+}
+
+#menuSubMenu{
+	width:635px;
+}
+
+#searchSubMenu{
+	width:365px;
+}
+
+#menuSubMenu ul, #searchSubMenu ul{
+	display: table-cell;
+	vertical-align: middle;	
+}
+
+#menuSubMenu ul li{
+	font-size:12pt;
+	padding: 15px;
+}
+
+#menuSubMenu ul li:hover{
+	background:#9b9267;
+}
+
+#menuSubMenu ul li a{
+	font-size:12pt;
+}
+
+#searchSubMenu input{
+	background: #fff url('../images/iconSearch.png') no-repeat 312px 5px;
+	color:#5a5a5a;
+	font-size:11pt;
+	width: 300px !important;
+	height: 15px;
+	display: table;
+	padding: 10px 35px 10px 10px;
+	font-style:italic;
+}
+/* @End Style Css SubMenu */
+
+/* Style Css Container*/
+#container{
+	background:#000;
+	display:table;
+	width:100%;
+	height:auto;
+	margin-top:10px;
+}
+
+#content, #sidebar{
+	display:table;
+	float:left;
+	height:auto;
+}
+
+#content{
+	background:#fff;
+	width:705px;
+	min-height:750px;
+	padding:15px 13px 15px 13px;
+}
+
+#sidebar{
+	color: #fff;
+	width: 251px;
+	margin: 15px 9px 15px 9px;
+}
+
+#sidebar ul{
+margin: 15px !important;	
+}
+
+#sidebar ul li {
+	display:list-item !important;
+	list-style-image:url('../images/list-item-sidebar.png') !important;
+	margin-left: 15px !important;
+}
+
+/* @End Style Css Container*/
+
+/* Style Css H1, H2, H3, H4, H5, H6*/
+h1, h2, h3, h4, h5, h6{
+	color:#5a5a5a;
+}
+
+h1{
+	font-size:17pt;
+}
+
+h2{
+	font-size:15pt;
+}
+
+h3{
+	font-size:13pt;
+}
+h4{
+	font-size:11pt;
+}
+h5{
+	font-size:9pt;
+}
+
+h6{
+	font-size:7pt;
+}
+
+/* @End Style Css H1, H2, H3, H4, H5, H6*/
+
+/* Style Css Box Post*/
+.boxPost{
+	display:table;
+	height:260px;
+	width:225px;
+	margin:0px 15px 30px 0px;
+	float:left;
+}
+
+.boxPost:nth-child(3n-1) {
+	margin-left:0px;
+}
+
+.boxPost:nth-child(3n+1) {
+	margin-right:0px;
+}
+
+.imgPost{
+	border:1px solid #e7eef0;
+	display:table;
+	width: 215px;
+	height: 163px;
+	padding: 5px;
+}
+
+.descPost p{
+	text-align:justify;
+	font-size:12pt;
+}
+
+.divisor{
+	border-top:1px solid #a1a1a1;
+}
+
+.detalhesPost{
+	display:table;
+	width: 100%;
+	height:auto;
+}
+
+.detalhesPost div{
+	display:table;
+	float:left;
+	margin:5px 0px 5px 0px;
+	width: 112px;
+}
+
+.detalhesPost div span{
+	font-size:9pt;
+}
+.datePost{
+	text-align:left;
+}
+.visualizacaoPost{
+	text-align:right;
+}
+
+.visualizacaoPost span{
+	float: left;
+}
+
+.visualizacaoPost p{
+	margin:0px;
+	float: right;
+}
+
+.visualizacaoPost span.iconVisualizacao{
+	margin-top: 4px;
+	margin-right: 5px;
+}
+
+.iconVisualizacao{
+	background:url('../images/iconVisualizacao.png') no-repeat;
+	display: table;
+	width: 13px;
+	height: 8px;
+}
+/* @End Style Css Box Post */
+
+/* Style Css Links*/
+a, a:hover, a:active, a:visited{
+	text-decoration:none;	
+}
+
+
+.linkBoxPost{
+	color:#5a5a5a;
+	text-decoration:none;
+}
+
+.linkBoxPost:hover{
+	text-decoration:none;
+}
+
+.linkSidebar{
+	color:#727272;
+	font-size:10pt;
+}
+
+.linkSidebar:hover{
+	color:#fff;
+}
+/* @End Style Css Links*/
+
+.listItemTitulo{
+	color:#9b9267;
+}
+
+.clearDiv{
+	clear:both;
+	float:none;
+}
+
+.tituloSidebar{
+	color:#fff;
+	font-size:14pt;
+	font-weight:bold;
+	background:#9b9267;
+	width:250px;
+	height:20px;
+	padding:10px;
+}
+
+.centralizarVertical{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+
+.upperCase{
+	text-transform:uppercase;
+}
+
+.shadowBoxLogo{
+	-moz-box-shadow: 0px 0px 5px 3px #494849;
+	-webkit-box-shadow: 0px 0px 5px 3px #494849;
+	box-shadow: 0px 0px 5px 3px #494849;
+}
+
+.shadowBoxBlack{
+	-moz-box-shadow: 0px 0px 20px 0px #494849;
+	-webkit-box-shadow: 0px 0px 20px 0px #494849;
+	box-shadow: 0px 0px 20px 0px #494849;
+}
+
+.blackOpacity{
+	/* IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	/* IE 5-7 */
+	filter: alpha(opacity=80);
+	/* Netscape */
+	-moz-opacity: 0.8;
+	/* Safari 1.x */
+	-khtml-opacity: 0.8;
+	/* Good browsers */
+	opacity: 0.8;
+}
+
+
+
+ul{
+	margin:0px;
+	padding:0px;
+}
+
+ul li{
+ list-style-type:none;
+ margin:0px;
+ padding:0px;
+ display:inline;
+}
