@@ -1,29 +1,18 @@
-<?php
-/**
- * The template for displaying all pages.
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
- *
- * @package WordPress
- * @subpackage Twenty_Twelve
- * @since Twenty Twelve 1.0
- */
-
-get_header(); ?>
-
-	<div id="primary" class="site-content">
-		<div id="content" role="main">
-
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'content', 'page' ); ?>
-				<?php comments_template( '', true ); ?>
-			<?php endwhile; // end of the loop. ?>
-
-		</div><!-- #content -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
+<?php get_header(); ?>
+<div id="container" class="shadowBoxBlack">
+    <div id="content">
+        <div>
+            <h1 class="capitalize">
+                <span class="listItemTitulo">//</span> <?php  strtolower(the_title()); ?>
+            </h1> 
+            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+					<p><?php the_content(); ?></p>
+			<?php endwhile; endif;?>
+				
+		</div>                           
+    </div>
+    <!--O código da sidebar ficava aqui-->
+    <?php get_sidebar(); ?>
+    <!--Fim o código da sidebar ficava aqui-->
+</div>
 <?php get_footer(); ?>

@@ -1,17 +1,20 @@
-<?php
-/**
- * The sidebar containing the main widget area.
- *
- * If no active widgets in sidebar, let's hide it completely.
- *
- * @package WordPress
- * @subpackage Twenty_Twelve
- * @since Twenty Twelve 1.0
- */
-?>
-
-	<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-		<div id="secondary" class="widget-area" role="complementary">
-			<?php dynamic_sidebar( 'sidebar-1' ); ?>
-		</div><!-- #secondary -->
-	<?php endif; ?>
+<div id="sidebar">
+    <div>
+        <div class="tituloSidebar centralizarVertical clearDiv">
+            Categorias
+        </div>
+    </div>
+    <div>
+    	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Sidebar') ) : ?>
+		<?php endif; 
+		echo('
+			<script type="text/javascript">
+				$("#sidebar ul, #sidebar ul li, #sidebar ul li a").removeAttr("class").removeAttr("id");
+				$.map($("#sidebar ul li a"), function(t,index){
+					$(t).attr("class", "linkSidebar upperCase");
+				});
+			</script>
+			');
+		?>
+    </div>
+</div>
