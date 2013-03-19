@@ -5,10 +5,16 @@
             <h1 class="capitalize">
                 <span class="listItemTitulo">// </span>
                 <?php 
-				if(have_posts() == 1)
-					echo sprintf('%d Resultado encontrado para: ', have_posts() );
+				$count = 0;
+				if ( have_posts() ) : while ( have_posts() ) : the_post();
+				$count++;
+				endwhile;
+				endif;
+				
+				if($count == 1)
+					echo sprintf('%d Resultado encontrado para: ', $count );
 				else
-					echo sprintf('%d Resultados encontrados para: ', have_posts());
+					echo sprintf('%d Resultados encontrados para: ', $count);
 				
 				strtolower(the_search_query());
 				?>
