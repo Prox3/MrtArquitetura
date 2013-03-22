@@ -59,18 +59,27 @@
                             	</a>
 							</div>
                             <div class="centralizarVertical">
-                            	<a href="#" >
+                            	<a href="http://www.orkut.com.br/Main#Profile?uid=5104373955928678992" >
                                 	<img src="<?php bloginfo( 'template_url' ) ?>/images/social/icon-google.png" width="100%" height="100%" />
                             	</a>
 							</div>
                         </div>
                         <div id="novidades">
-                        	<div id="inpTextNovidades" class="centralizarVertical">
+                        	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('Novidades') ) : ?>
+							<?php endif; 
+							echo('
+								<script type="text/javascript">
+									$("form.sml_subscribe p.sml_email").attr("id","inpTextNovidades").addClass("centralizarVertical");
+									$("form.sml_subscribe p.sml_submit").attr("id","inpSubmitNovidades").addClass("centralizarVertical");
+								</script>
+							');
+							?>                            
+                            <!--<div id="inpTextNovidades" class="centralizarVertical">
                                 <input type="text" id="novidadeSocial2" name="novidadeSocial2" value="" placeholder="Insira seu e-mail para receber novidades" />
 	                        </div>
                             <div id="inpSubmitNovidades" class="centralizarVertical">
                                 <input type="submit" id="submitNovidades" name="submitNovidades" value="" />
-	                        </div>
+	                        </div>-->
                         </div>
                     </div>
                     </div>
@@ -81,7 +90,7 @@
                         <p class="fontGeorgia italic">Todos os direitos reservados © 2013</p>
                     </div>
                     <div id="desenvolvedor">
-                    	<a href="#" class="centralizarVertical">
+                    	<a href="http://actmob.com/#!/home" class="centralizarVertical">
                         	<img src="<?php bloginfo( 'template_url' ) ?>/images/actmob.png" />
                         </a>
                     </div>
@@ -89,5 +98,6 @@
             </div>
         </div>
     </div>
+<?php wp_footer(); ?>
 </body>
 </html>

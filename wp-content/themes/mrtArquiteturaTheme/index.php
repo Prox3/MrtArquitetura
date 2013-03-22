@@ -3,7 +3,7 @@
     <div id="content">
         <div>
             <h1 class="capitalize">
-                <span class="listItemTitulo">//</span>Últimas do Blog
+                <span class="listItemTitulo">//</span> Últimas do Blog
             </h1>  
             
             <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
@@ -17,7 +17,7 @@
 							  	<script type="text/javascript">
 									$("#content .boxPost .imgPost img").removeAttr("width").removeAttr("height");
 									$.map($("#content .boxPost .imgPost img"), function(t,index){
-										$(t).attr("width", "100%").attr("height","100%");
+										$(t).attr("width", "211").attr("height","159");
 									});
 								</script>
 							  ');

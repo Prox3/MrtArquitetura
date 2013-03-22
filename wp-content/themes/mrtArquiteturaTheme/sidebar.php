@@ -12,6 +12,9 @@
 				$("#sidebar ul, #sidebar ul li, #sidebar ul li a").removeAttr("class").removeAttr("id");
 				$.map($("#sidebar ul li a"), function(t,index){
 					$(t).attr("class", "linkSidebar upperCase");
+					var id = removeAcento($(t).text().split(" ")[0]);
+					if(id.toLowerCase() == "portfolio")
+						$($(t).parent()[0]).remove();
 				});
 			</script>
 			');

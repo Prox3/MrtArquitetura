@@ -20,6 +20,14 @@ if (function_exists('register_sidebar'))
 		'before_title'	=> '<h3>',
 		'after_title'	=> '</h3>',
     ));
+	
+	register_sidebar(array(
+		'name'			=> 'BannerHeader',
+        'before_widget'	=> '',
+        'after_widget'	=> '',
+		'before_title'	=> '',
+		'after_title'	=> '',
+    ));
 }
 
 // function to display number of posts.

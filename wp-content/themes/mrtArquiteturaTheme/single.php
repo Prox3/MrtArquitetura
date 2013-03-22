@@ -4,160 +4,50 @@
     <div id="content">
         <div>
             <h1>
-                <span class="listItemTitulo">//</span> Últimas do Blog
+                <span class="listItemTitulo">//</span> <?php echo get_the_title(); ?> 
             </h1>                      
-            <div class="boxPost">
-                <a href="#" class="linkBoxPost">
-                    <div class="imgPost">
-                        <img src="images/imgBoxPost.png" width="100%" height="100%" />
-                    </div>
-                    <div class="descPost">
-                        <p>
-                        Reformar requer planejamento, bons profissionais e diplomacia
-                        </p>
-                    </div>
-                    <div class="divisor"></div>
-                    <div class="detalhesPost">
-                        <div class="datePost">
-                            <span>11/11/2011</span>
-                        </div>
-                        <div class="visualizacaoPost">
-                            <p>
-                                <span class="iconVisualizacao"></span>
-                                <span>240</span>
-                            </p>
-                        </div>
-                    </div> 
-                </a>                           
-            </div>
-            <div class="boxPost">
-                <a href="#" class="linkBoxPost">
-                    <div class="imgPost">
-                        <img src="images/imgBoxPost.png" width="100%" height="100%" />
-                    </div>
-                    <div class="descPost">
-                        <p>
-                        Reformar requer planejamento, bons profissionais e diplomacia
-                        </p>
-                    </div>
-                    <div class="divisor"></div>
-                    <div class="detalhesPost">
-                        <div class="datePost">
-                            <span>11/11/2011</span>
-                        </div>
-                        <div class="visualizacaoPost">
-                            <p>
-                                <span class="iconVisualizacao"></span>
-                                <span>240</span>
-                            </p>
-                        </div>
-                    </div> 
-                </a>                           
-            </div>
-            <div class="boxPost">
-                <a href="#" class="linkBoxPost">
-                    <div class="imgPost">
-                        <img src="images/imgBoxPost.png" width="100%" height="100%" />
-                    </div>
-                    <div class="descPost">
-                        <p>
-                        Reformar requer planejamento, bons profissionais e diplomacia
-                        </p>
-                    </div>
-                    <div class="divisor"></div>
-                    <div class="detalhesPost">
-                        <div class="datePost">
-                            <span>11/11/2011</span>
-                        </div>
-                        <div class="visualizacaoPost">
-                            <p>
-                                <span class="iconVisualizacao"></span>
-                                <span>240</span>
-                            </p>
-                        </div>
-                    </div> 
-                </a>                           
-            </div>
-            <div class="boxPost">
-                <a href="#" class="linkBoxPost">
-                    <div class="imgPost">
-                        <img src="images/imgBoxPost.png" width="100%" height="100%" />
-                    </div>
-                    <div class="descPost">
-                        <p>
-                        Reformar requer planejamento, bons profissionais e diplomacia
-                        </p>
-                    </div>
-                    <div class="divisor"></div>
-                    <div class="detalhesPost">
-                        <div class="datePost">
-                            <span>11/11/2011</span>
-                        </div>
-                        <div class="visualizacaoPost">
-                            <p>
-                                <span class="iconVisualizacao"></span>
-                                <span>240</span>
-                            </p>
-                        </div>
-                    </div> 
-                </a>                           
-            </div>
-            <div class="boxPost">
-                <a href="#" class="linkBoxPost">
-                    <div class="imgPost">
-                        <img src="images/imgBoxPost.png" width="100%" height="100%" />
-                    </div>
-                    <div class="descPost">
-                        <p>
-                        Reformar requer planejamento, bons profissionais e diplomacia
-                        </p>
-                    </div>
-                    <div class="divisor"></div>
-                    <div class="detalhesPost">
-                        <div class="datePost">
-                            <span>11/11/2011</span>
-                        </div>
-                        <div class="visualizacaoPost">
-                            <p>
-                                <span class="iconVisualizacao"></span>
-                                <span>240</span>
-                            </p>
-                        </div>
-                    </div> 
-                </a>                           
-            </div>
-            <div class="boxPost">
-                <a href="#" class="linkBoxPost">
-                    <div class="imgPost">
-                        <img src="images/imgBoxPost.png" width="100%" height="100%" />
-                    </div>
-                    <div class="descPost">
-                        <p>
-                        Reformar requer planejamento, bons profissionais e diplomacia
-                        </p>
-                    </div>
-                    <div class="divisor"></div>
-                    <div class="detalhesPost">
-                        <div class="datePost">
-                            <span>11/11/2011</span>
-                        </div>
-                        <div class="visualizacaoPost">
-                            <p>
-                                <span class="iconVisualizacao"></span>
-                                <span>240</span>
-                            </p>
-                        </div>
-                    </div> 
-                </a>                           
+            <div class="alturaminima">
+            <?php 
+				if ( have_posts() ) : 
+					while ( have_posts() ) : the_post(); 
+						the_content();
+					endwhile; 
+				endif;
+			?>
             </div>
         </div>
         <div id="pagPost">
             <div id="postAntigos">
-                <a href="#" class="linkBtnPost centralizarVertical">postagens mais antigas</a>
+            	<?php previous_post('%', 'Postagens mais antigas', 'no'); 
+					echo('
+						<script type="text/javascript">
+							$("#postAntigos a").removeAttr("width").removeAttr("height");
+							$.map($("#postAntigos a"), function(t,index){
+								$(t).attr("class", "linkBtnPost centralizarVertical");
+							});
+						</script>
+					');
+				?>
+				<?php //previous_posts_link('postagens mais antigas') ?>
+                <!--<a href="#" class="linkBtnPost centralizarVertical"></a>-->
             </div>
             <div id="postNovos">
-                <a href="#" class="linkBtnPost centralizarVertical">novas postagens</a>
+            	<?php 
+					next_post('%', 'Novas postagens', 'no');
+					echo('
+						<script type="text/javascript">
+							$("#postNovos a").removeAttr("width").removeAttr("height");
+							$.map($("#postNovos a"), function(t,index){
+								$(t).attr("class", "linkBtnPost centralizarVertical");
+							});
+						</script>
+					');
+				?>
+                <?php //next_posts_link('') ?>
+                <!--<a href="#" class="linkBtnPost centralizarVertical"></a>-->
             </div>
+        </div>
+        <div id="facebook" class="fb-comments" data-href="<?php echo get_permalink($id); ?>" data-num-posts="30" data-width="705">
         </div>
     </div>
     

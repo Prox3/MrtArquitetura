@@ -5,7 +5,6 @@
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <title><?php wp_title(''); ?></title>
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <script src="<?php bloginfo( 'template_url' ) ?>/script/jquery.min.js" type="text/javascript"></script>
 <script src="<?php bloginfo( 'template_url' ) ?>/script/twitter.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -15,10 +14,9 @@ $(document).ready(function(){
 	});
 });
 </script>
-<?php /*?><?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); wp_head(); ?><?php */?>
-<!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>MRT Arquitetura</title>
-<link rel="stylesheet" href="css/style.css" type="text/css" />-->
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); wp_head(); ?>
+<?php wp_head(); ?>
 </head>
 <body>
     <div id="tudo">
@@ -31,7 +29,7 @@ $(document).ready(function(){
                         	<?php
 								wp_nav_menu( array('menu' => 'Menu Header 1', 'container' => '')); 						 	
 								echo('
-								<script type="text/javascript">
+								<script type="text/javascript">									
 									$("#contentHeader ul, #contentHeader ul li, #contentHeader ul li a").removeAttr("class").removeAttr("id");
 									$.map($("#contentHeader ul li a"), function(t,index){
 										$(t).attr("class", "linkMenuHeader upperCase");
@@ -61,7 +59,9 @@ $(document).ready(function(){
                 </div>
                 <div id="banner">
                     <div>
-                    <img src="<?php bloginfo( 'template_url' ) ?>/images/bannerRotativo.png" alt="" />
+                    <?php /*?><img src="<?php bloginfo( 'template_url' ) ?>/images/bannerRotativo.png" alt="" /><?php */?>
+                    <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('BannerHeader') ) : endif; 
+					?>
                     </div>
                 </div>
                 <div class="clearDivBanner"></div>
@@ -74,9 +74,28 @@ $(document).ready(function(){
 								wp_nav_menu( array('menu' => 'Sub Menu Header', 'container' => '')); 						 	
 								echo('
 								<script type="text/javascript">
+									function removeAcento(strToReplace) {
+										str_acento= "áàãâäéèêëíìîïóòõôöúùûüçÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÖÔÚÙÛÜÇ";
+										str_sem_acento = "aaaaaeeeeiiiiooooouuuucAAAAAEEEEIIIIOOOOOUUUUC";
+										var nova="";
+										for (var i = 0; i < strToReplace.length; i++) {
+											if (str_acento.indexOf(strToReplace.charAt(i)) != -1) {
+												nova+=str_sem_acento.substr(str_acento.search(strToReplace.substr(i,1)),1);
+											} else {
+												nova+=strToReplace.substr(i,1);
+											}
+										}
+										return nova;
+									}
+									
 									$("#menuSubMenu ul, #menuSubMenu ul li, #menuSubMenu ul li a").removeAttr("class").removeAttr("id");
+									var pag = removeAcento((location.pathname.split("/")[(location.pathname.split("/").length)-2]).split("-")[0]);
+									
 									$.map($("#menuSubMenu ul li a"), function(t,index){
 										$(t).attr("class", "linkMenuHeader upperCase");
+										var id = removeAcento($(t).text().split(" ")[0]);
+										if(pag.toLowerCase() == id.toLowerCase())
+											$($(t).parent()[0]).attr("class", "active");
 									});
 								</script>
 								');
