@@ -57,10 +57,28 @@ $(document).ready(function(){
                         </ul>
                     </div>
                 </div>
-                <div id="banner">
+                <div id="banner" style="visibility:hidden">
                     <div>
                     <?php /*?><img src="<?php bloginfo( 'template_url' ) ?>/images/bannerRotativo.png" alt="" /><?php */?>
                     <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('BannerHeader') ) : endif; 
+								echo('
+						<script type="text/javascript">
+						var aux = 0;
+						setInterval(function() {
+						if(aux == 0){
+						$("#banner .thumbsHolderWrapper, [id*=\'bannerWithPlaylistParent\']").removeAttr("style");
+						
+						$("[id*=\'bannerWithPlaylistParent\']").attr("style","position: relative;width: 100%;height: 662px;left: 0px;top: 0px;");
+						$(".allinone_bannerWithPlaylist").width("100%")
+						$("#banner .thumbsHolderWrapper").attr("style","width: 172px;height: 400px;top: 110px;right: 200px;position: absolute;z-index: 10;");
+						$("#banner").css("visibility","visible");
+						$(".leftNav").click()
+						aux++;
+						}
+						}, 200);
+						</script>
+					');
+					
 					?>
                     </div>
                 </div>
