@@ -71,6 +71,7 @@
 								<script type="text/javascript">
 									$("form.sml_subscribe p.sml_email").attr("id","inpTextNovidades").addClass("centralizarVertical");
 									$("form.sml_subscribe p.sml_submit").attr("id","inpSubmitNovidades").addClass("centralizarVertical");
+									$("#content").height($("#container").height()+50);
 								</script>
 							');
 							?>                            

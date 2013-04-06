@@ -9,9 +9,8 @@ Author URI: http://www.prox3.com/
 @font-face {
 	font-family: 'HelveticaNeueLT-Light';
 	src: url('css/fontes/Helvetica_LT_45_Light.eot?') format('eot'), 
-	     url('css/fontes//Helvetica_LT_45_Light.woff') format('woff'), 
-	     url('css/fontes//Helvetica_LT_45_Light.ttf')  format('truetype');
-		 /*url('http://fonts.snapshotmedia.co.uk/uploads/HelveticaNeueLT-Light/Helvetica_LT_45_Light.svg#http://fonts.snapshotmedia.co.uk/uploads/HelveticaNeueLT-Light/Helvetica_LT_45_Light') format('svg')*/
+	     url('css/fontes/Helvetica_LT_45_Light.woff') format('woff'), 
+	     url('css/fontes/Helvetica_LT_45_Light.ttf')  format('truetype');
 }
 
 *{
@@ -263,8 +262,8 @@ background: #9b9267;
 #content{
 	background:#fff;
 	width:705px;
-	height:574px;
-	min-height: 574px;
+	height:624px;
+	min-height: 624px;
 	padding:15px 13px 15px 13px;
 }
 
@@ -282,7 +281,7 @@ margin: 15px !important;
 	display:list-item !important;
 	list-style-image:url('images/list-item-sidebar.png') !important;
 	margin-left: 15px !important;
-	height: 20px;
+	/*height: 20px;*/
 }
 
 /* @End Style Css Container*/
@@ -344,6 +343,8 @@ h6{
 .descPost p{
 	text-align:justify;
 	font-size:12pt;
+overflow: hidden;
+height: 35px;
 }
 
 .divisor{
@@ -403,6 +404,16 @@ h6{
 #pagPost #postAntigos, #pagPost #postNovos{
 	display:table;
 	height:30px;
+}
+
+#pagPost #postAntigos a, #pagPost #postNovos a{
+	color:#fff;
+	background:#000;
+	height:inherit;
+	padding:0px 5px 0px 5px;
+	display: table-cell;
+	vertical-align: middle;
+	text-transform:capitalize;
 }
 
 #pagPost #postAntigos{
@@ -562,7 +573,9 @@ a, a:hover, a:active, a:visited{
 
 #novidades input[type=submit]{
 	cursor:pointer;
-	background:#9b9267 url('images/icon-search-footer.png') no-repeat 25px 8px;
+	background:#9b9267 url('images/icon-search-footer.png') no-repeat 
+
+25px 8px;
 	display:table;
 	height:45px;
 	width:70px;
@@ -606,6 +619,7 @@ a, a:hover, a:active, a:visited{
 	display:table;
 	padding:0px;
 	margin:0px;
+	width:300px;
 }
 
 #ultimosPostTwitter ul li{
@@ -787,34 +801,67 @@ background:none;
 color:#fff;
 }
 
-#formSolicitacaoOrcamento .wpcf7-not-valid-tip-no-ajax {
-	background-color: #ffeded;
-	border: 1px solid #e88f8f;
-	border-radius: 5px;
-	color: #d51111;
-	font-family: 'HelveticaNeueLT-Light';
-	font-size: 14px;
-	margin: 1px 0px 10px 10px;
-	clear: both;
-	display: inline;
-	padding: 10px 15px 10px 15px;
-	width:auto;
-	position:absolute;
+#formSolicitacaoOrcamento .wpcf7-not-valid-tip-no-ajax, 
+
+#formSolicitacaoOrcamento .wpcf7-not-valid-tip {
+	background-color: #ffeded !important;
+	border: 1px solid #e88f8f !important;
+	border-radius: 5px !important;
+	color: #d51111 !important;
+	font-family: 'HelveticaNeueLT-Light' !important;
+	font-size: 14px !important;
+	margin: 1px 0px 10px 10px !important;
+	clear: both !important;
+	display: inline !important;
+	padding: 10px 15px 10px 15px !important;
+	width:130px !important;
+	position:absolute !important;
+	left: 100% !important;
+	top: 0px !important;
 }
 
 .wpcf7-mail-sent-ok{
-	font-family: 'HelveticaNeueLT-Light';
-	background-color: #f0ffed;
-	border: 1px solid #8fe88f;
-	border-radius: 5px;
-	color: #1d8c0a;
-	font-size: 14px;
-	margin: 10px auto 10px auto;
-	clear: both;
-	display: table;
-	padding: 10px 15px 10px 15px;
+	font-family: 'HelveticaNeueLT-Light' !important;
+	background-color: #f0ffed !important;
+	border: 1px solid #8fe88f !important;
+	border-radius: 5px !important;
+	color: #1d8c0a !important;
+	font-size: 14px !important;
+	margin: 10px auto 10px auto !important;
+	clear: both !important;
+	display: table !important;
+	padding: 10px 15px 10px 15px !important;
 }
+
+div.wpcf7-validation-errors{
+border:0px !important;
+}
+
 
 #content p{
 	font-size:14px !important;
+}
+
+.breadcrumbs{
+margin: 10px 0px -10px 0px;
+font-size: 14px;
+text-transform: uppercase;
+background: #f5f5f5;
+}
+
+.breadcrumbs a{
+padding: 0px 5px 0px 5px;
+color: #000;
+}
+
+.breadcrumbs a:hover{
+background: #9b9267;
+color: #fff;
+}
+
+.shareThis{
+	float:left;
+	display:table;
+	width:700px;
+	margin:15px 0px 5px 0px;
 }

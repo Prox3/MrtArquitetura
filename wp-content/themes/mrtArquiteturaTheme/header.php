@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
@@ -60,7 +60,7 @@ $(document).ready(function(){
                 <div id="banner" style="visibility:hidden">
                     <div>
                     <?php /*?><img src="<?php bloginfo( 'template_url' ) ?>/images/bannerRotativo.png" alt="" /><?php */?>
-                    <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('BannerHeader') ) : endif; 
+                   <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('BannerHeader') ) : endif; 
 								echo('
 						<script type="text/javascript">
 						var aux = 0;
@@ -70,12 +70,13 @@ $(document).ready(function(){
 						
 						$("[id*=\'bannerWithPlaylistParent\']").attr("style","position: relative;width: 100%;height: 662px;left: 0px;top: 0px;");
 						$(".allinone_bannerWithPlaylist").width("100%")
-						$("#banner .thumbsHolderWrapper").attr("style","width: 172px;height: 400px;top: 110px;right: 200px;position: absolute;z-index: 10;");
+						$("#banner .thumbsHolderWrapper").attr("style","width: 14%;height: 100%;top: 110px;right: 15%;position: absolute;z-index: 10;");
 						$("#banner").css("visibility","visible");
 						$(".leftNav").click()
+						$(".clearDivBanner").height($(".thumbsHolder").height()+70);
 						aux++;
 						}
-						}, 200);
+						}, 1000);
 						</script>
 					');
 					

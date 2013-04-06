@@ -1,4 +1,6 @@
 <div id="sidebar">
+	<div id="contentSearch" style="display:none;clear:both;">
+    </div>
     <div>
         <div class="tituloSidebar centralizarVertical clearDiv">
             Categorias
