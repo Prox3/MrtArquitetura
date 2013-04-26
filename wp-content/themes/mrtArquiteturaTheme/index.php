@@ -3,10 +3,12 @@
     <div id="content">
         <div>
             <h1 class="capitalize">
-                <span class="listItemTitulo">//</span> Últimas do Blog
+                <span class="listItemTitulo">//</span> Dicas e Notícias
             </h1>  
             
-            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+            <?php 
+						query_posts( array( 'cat' => 10, 'orderby' => 'date', 'order' => 'DESC' ) );
+						if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                 <div class="boxPost">
                     <a href="<?php the_permalink() ?>" class="linkBoxPost">
                         <div class="imgPost">
@@ -70,4 +72,17 @@
     <?php get_sidebar(); ?>
     <!--Fim o código da sidebar ficava aqui-->
 </div>
+<script type="text/javascript">
+
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-15461352-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function () {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+
+</script>
 <?php get_footer(); ?>

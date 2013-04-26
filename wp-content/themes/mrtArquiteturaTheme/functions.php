@@ -70,5 +70,8 @@ function posts_custom_column_views($column_name, $id){
     }
 }
 
+/* Desabilitar Admin Bar. */
+add_filter( ‘show_admin_bar’, ‘__return_true’ );
+
 
 ?>
